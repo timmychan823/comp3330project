@@ -37,22 +37,23 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var createAccountButton: Button = findViewById(R.id.createAccountButton)
-        var loginButton: Button = findViewById(R.id.loginButton)
-        var userName: EditText = findViewById(R.id.userName)
-        var password: EditText = findViewById(R.id.password)
+        val createAccountButton: Button = findViewById<Button>(R.id.createAccountButton)
+        val loginButton: Button = findViewById<Button>(R.id.loginButton)
+        val userEmailAddress: EditText = findViewById<EditText>(R.id.user_email_address)
+        val password: EditText = findViewById<EditText>(R.id.password)
+        val errorText: TextView = findViewById<TextView>(R.id.error)
 
 
         loginButton.setOnClickListener {
 
 
 
-            val userNameText:String = userName!!.text.toString()
+            val userEmailAddressText:String = userEmailAddress!!.text.toString()
             val passwordText:String = password!!.text.toString()
 
-            val url:String = serverIPandPort +"/login"+ "?email_address=" + userNameText+"&password="+passwordText
+            val url:String = serverIPandPort +"/login"+ "?email_address=" + userEmailAddressText+"&password="+passwordText
             val jsonObjectRequest = JsonObjectRequest( Request.Method.GET, url, null, Response.Listener {response ->
-                switchActivity(response,userNameText,passwordText) },
+                switchActivity(response,userEmailAddressText,passwordText,errorText) },
                 Response.ErrorListener { error -> Log.e("MyActivity",error.toString())
                 } )
             Volley.newRequestQueue(this).add(jsonObjectRequest) }
@@ -63,15 +64,18 @@ class MainActivity : ComponentActivity() {
 
         }
 
-        fun switchActivity(jsonObj: JSONObject,userNameText:String,passwordText:String){
+        fun switchActivity(jsonObj: JSONObject,userEmailAddressText:String,passwordText:String,errorText:TextView){
 
             val returned_email_address: String =  jsonObj.get("returned_email_address") as String
             val returned_password: String = jsonObj.get("returned_password") as String
 
+            if (returned_email_address!=userEmailAddressText||returned_password!=passwordText){
+                errorText.text = "Incorrect email address or incorrect password"
+            }
 
-
-            if ( returned_email_address==userNameText && returned_password==passwordText){
+            if ( returned_email_address==userEmailAddressText && returned_password==passwordText){
                 val intent = Intent(this@MainActivity, HomePage::class.java)
+                errorText.text =""
                 startActivity(intent)
             }
 
