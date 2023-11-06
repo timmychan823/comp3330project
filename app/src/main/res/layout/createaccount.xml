@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateaccountActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#DAFFEB"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="200px"
+            android:text="Create Your Account"
+            android:textSize="100px">
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="80px"
+            android:layout_marginLeft="10px"
+            android:text="Email Address:">
+
+        </TextView>
+
+
+        <EditText
+            android:id="@+id/create_email_address"
+            android:layout_width="match_parent"
+            android:layout_height="100px"
+            android:textSize="40px"></EditText>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="80px"
+            android:layout_marginLeft="10px"
+            android:text="Password:">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/create_password"
+            android:layout_width="match_parent"
+            android:layout_height="100px"
+            android:textSize="40px">
+
+        </EditText>
+
+
+        <Button
+            android:id="@+id/create_account_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "Create"
+            android:background="#57D9A6">
+
+        </Button>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

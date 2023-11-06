@@ -44,6 +44,12 @@ class MainActivity : ComponentActivity() {
         val errorText: TextView = findViewById<TextView>(R.id.error)
 
 
+        createAccountButton.setOnClickListener{
+            val intent = Intent(this@MainActivity, CreateaccountActivity::class.java)
+            startActivity(intent)
+
+        }
+
         loginButton.setOnClickListener {
 
 
