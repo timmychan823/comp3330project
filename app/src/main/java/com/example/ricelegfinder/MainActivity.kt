@@ -1,5 +1,6 @@
 package com.example.ricelegfinder
 
+
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -26,6 +27,9 @@ import com.android.volley.toolbox.Volley
 import org.json.JSONArray
 import org.json.JSONObject
 
+
+import com.example.constants.serverIPandPort
+
 class MainActivity : ComponentActivity() {
 
 
@@ -46,7 +50,7 @@ class MainActivity : ComponentActivity() {
             val userNameText:String = userName!!.text.toString()
             val passwordText:String = password!!.text.toString()
 
-            val url:String = "http://192.168.1.207:8964/login" + "?email_address=" + userNameText+"&password="+passwordText
+            val url:String = serverIPandPort +"/login"+ "?email_address=" + userNameText+"&password="+passwordText
             val jsonObjectRequest = JsonObjectRequest( Request.Method.GET, url, null, Response.Listener {response ->
                 switchActivity(response,userNameText,passwordText) },
                 Response.ErrorListener { error -> Log.e("MyActivity",error.toString())
