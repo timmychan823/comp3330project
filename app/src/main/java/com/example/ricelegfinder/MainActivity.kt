@@ -66,6 +66,8 @@ class MainActivity : ComponentActivity() {
 
         fun switchActivity(jsonObj: JSONObject,userEmailAddressText:String,passwordText:String,errorText:TextView){
 
+            val returned_user_id: Int =  jsonObj.get("returned_user_id") as Int
+
             val returned_email_address: String =  jsonObj.get("returned_email_address") as String
             val returned_password: String = jsonObj.get("returned_password") as String
 
@@ -76,7 +78,9 @@ class MainActivity : ComponentActivity() {
             if ( returned_email_address==userEmailAddressText && returned_password==passwordText){
                 val intent = Intent(this@MainActivity, HomePage::class.java)
                 errorText.text =""
+                intent.putExtra("my_user_id",returned_user_id)
                 startActivity(intent)
+
             }
 
 

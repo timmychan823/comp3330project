@@ -11,9 +11,10 @@
         android:layout_height="match_parent"
         android:background="#DAFFEB">
         <TextView
+            android:id="@+id/my_user_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Main Page"
+            android:text=""
             android:textSize="400px"></TextView>
 
 
