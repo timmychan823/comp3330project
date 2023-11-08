@@ -44,7 +44,7 @@ class MainActivity : ComponentActivity() {
         val errorText: TextView = findViewById<TextView>(R.id.error)
 
 
-        createAccountButton.setOnClickListener{
+        createAccountButton.setOnClickListener {
             val intent = Intent(this@MainActivity, CreateaccountActivity::class.java)
             startActivity(intent)
 
@@ -53,46 +53,24 @@ class MainActivity : ComponentActivity() {
         loginButton.setOnClickListener {
 
 
+            val userEmailAddressText: String = userEmailAddress!!.text.toString()
+            val passwordText: String = password!!.text.toString()
 
-            val userEmailAddressText:String = userEmailAddress!!.text.toString()
-            val passwordText:String = password!!.text.toString()
-
-            val url:String = serverIPandPort +"/login"+ "?email_address=" + userEmailAddressText+"&password="+passwordText
-            val jsonObjectRequest = JsonObjectRequest( Request.Method.GET, url, null, Response.Listener {response ->
-                switchActivity(response,userEmailAddressText,passwordText,errorText) },
-                Response.ErrorListener { error -> Log.e("MyActivity",error.toString())
-                } )
-            Volley.newRequestQueue(this).add(jsonObjectRequest) }
-
-
-
-
-
-        }
-
-        fun switchActivity(jsonObj: JSONObject,userEmailAddressText:String,passwordText:String,errorText:TextView){
-
-            val returned_user_id: Int =  jsonObj.get("returned_user_id") as Int
-
-            val returned_email_address: String =  jsonObj.get("returned_email_address") as String
-            val returned_password: String = jsonObj.get("returned_password") as String
-
-            if (returned_email_address!=userEmailAddressText||returned_password!=passwordText){
-                errorText.text = "Incorrect email address or incorrect password"
-            }
-
-            if ( returned_email_address==userEmailAddressText && returned_password==passwordText){
+            if (userEmailAddressText != "ricelegfinder@connect.hku.hk" || passwordText != "123456") {
+                errorText.text = "Incorrect email address or password"
+            } else {
                 val intent = Intent(this@MainActivity, HomePage::class.java)
                 errorText.text =""
-                intent.putExtra("my_user_id",returned_user_id)
+                intent.putExtra("my_user_id",1)
                 startActivity(intent)
 
             }
 
 
-
-
         }
+    }
+
+
 
 }
 

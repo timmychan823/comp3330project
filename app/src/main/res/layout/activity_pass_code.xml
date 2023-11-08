@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PassCode">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#DAFFEB">
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="362dp"
+            android:layout_height="69dp"
+            android:layout_marginTop="48dp"
+            android:text="We have sent a passcode to your email address, please enter it below"
+            android:textAlignment="center"
+            android:textSize="50px"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.489"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/passcode"
+            android:layout_width="334dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="60dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        </EditText>
+
+        <Button
+            android:id="@+id/passcode_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="88dp"
+            android:layout_marginTop="28dp"
+            android:text="Confirm Passcode"
+            app:layout_constraintStart_toStartOf="@+id/passcode"
+            app:layout_constraintTop_toBottomOf="@+id/passcode">
+
+        </Button>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

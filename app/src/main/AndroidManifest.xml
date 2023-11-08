@@ -16,6 +16,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="34">
         <activity
+            android:name=".PassCode"
+            android:exported="false" />
+        <activity
             android:name=".CreateaccountActivity"
             android:exported="false" />
         <activity

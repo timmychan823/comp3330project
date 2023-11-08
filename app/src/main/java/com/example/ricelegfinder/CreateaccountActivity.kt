@@ -1,10 +1,12 @@
 package com.example.ricelegfinder
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.compose.foundation.layout.Box
 import com.android.volley.Request
@@ -22,6 +24,8 @@ class CreateaccountActivity: ComponentActivity() {
         val create_email_address: EditText = findViewById<EditText>(R.id.create_email_address)
         val create_password: EditText = findViewById<EditText>(R.id.create_password)
         val create_account_button: Button = findViewById(R.id.create_account_button)
+        val create_account_error_text: TextView = findViewById(R.id.create_account_error)
+        val create_display_name: EditText = findViewById<EditText>(R.id.create_display_name)
 
         create_account_button.setOnClickListener {
 
@@ -29,13 +33,23 @@ class CreateaccountActivity: ComponentActivity() {
 
             val createEmailAddressText:String = create_email_address!!.text.toString()
             val createPasswordText:String = create_password!!.text.toString()
+            val createDisplayNameText:String = create_display_name!!.text.toString()
 
-            val url:String = serverIPandPort +"/passcode"+ "?email_address=" + createEmailAddressText
-            val jsonObjectRequest = JsonObjectRequest( Request.Method.GET, url, null, Response.Listener { response ->
-                dummy(response,createEmailAddressText) },
-                Response.ErrorListener { error -> Log.e("MyActivity",error.toString())
-                } )
-            Volley.newRequestQueue(this).add(jsonObjectRequest)
+
+            val substring = ".+@connect.hku.hk$"
+            val regex = substring.toRegex()
+
+            if (regex.containsMatchIn(createEmailAddressText)){
+                create_account_error_text.text=""
+                val intent = Intent(this@CreateaccountActivity, PassCode::class.java)
+                startActivity(intent)
+
+            }else{
+                create_account_error_text.text="Not HKU email account"
+
+
+            }
+
         }
 
 
