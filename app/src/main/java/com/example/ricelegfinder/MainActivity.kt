@@ -59,7 +59,7 @@ class MainActivity : ComponentActivity() {
             if (userEmailAddressText != "ricelegfinder@connect.hku.hk" || passwordText != "123456") {
                 errorText.text = "Incorrect email address or password"
             } else {
-                val intent = Intent(this@MainActivity, HomePage::class.java)
+                val intent = Intent(this@MainActivity, ChatActivity::class.java)
                 errorText.text =""
                 intent.putExtra("my_user_id",1)
                 startActivity(intent)

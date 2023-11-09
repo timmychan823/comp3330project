@@ -19,6 +19,19 @@
 
     </View>
 
+    <View
+        android:id="@+id/headerBackground"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#57D9A6"
+        app:layout_constraintBottom_toTopOf="@id/viewSupporter"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+    </View>
+
+
+
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageBack"
         android:layout_width="30sp"
@@ -29,7 +42,8 @@
         android:padding="5sp"
         android:src="@drawable/ic_back"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:tint="@color/white">
 
     </androidx.appcompat.widget.AppCompatImageView>
 
@@ -58,7 +72,7 @@
         android:gravity="center"
         android:maxLines="2"
         android:text="Charlie Chan"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="40px"
         android:textStyle="bold"
 
@@ -70,6 +84,17 @@
 
     </TextView>
 
+
+    <View
+        android:id="@+id/viewSupporter"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#57D9A6"
+        android:layout_marginTop="12sp"
+        app:layout_constraintTop_toBottomOf="@+id/imageBack">
+
+    </View>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chatRecyclierView"
         android:layout_width="match_parent"
@@ -78,10 +103,11 @@
         android:orientation="vertical"
         android:overScrollMode="never"
         android:padding="20sp"
+        app:stackFromEnd="true"
         android:visibility="gone"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="@id/viewBackground"
-        app:layout_constraintTop_toBottomOf="@id/imageBack">
+        app:layout_constraintTop_toBottomOf="@id/viewSupporter">
 
     </androidx.recyclerview.widget.RecyclerView>
 
@@ -101,6 +127,7 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/sendButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="4sp"
@@ -129,7 +156,7 @@
         android:paddingStart="16sp"
         android:paddingEnd="16sp"
         android:textColor="#FFFFFF"
-        android:textColorHint="#white"
+        android:textColorHint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/layoutSend"
         app:layout_constraintStart_toStartOf="parent">
