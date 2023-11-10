@@ -14,7 +14,6 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
-import com.example.constants.serverIPandPort
 import org.json.JSONObject
 
 class CreateaccountActivity: ComponentActivity() {
@@ -42,7 +41,9 @@ class CreateaccountActivity: ComponentActivity() {
             if (regex.containsMatchIn(createEmailAddressText)){
                 create_account_error_text.text=""
                 val intent = Intent(this@CreateaccountActivity, PassCode::class.java)
-                startActivity(intent)
+                intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+                startActivityIfNeeded(intent,0)
+
             }else{
                 create_account_error_text.text="Not HKU email account"
             }
@@ -50,7 +51,8 @@ class CreateaccountActivity: ComponentActivity() {
         }
         image_back_create.setOnClickListener{
             val intent = Intent(this@CreateaccountActivity, MainActivity::class.java)
-            startActivity(intent)
+            intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+            startActivityIfNeeded(intent,0)
 
         }
 

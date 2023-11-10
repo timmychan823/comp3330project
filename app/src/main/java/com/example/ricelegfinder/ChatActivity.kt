@@ -29,8 +29,9 @@ class ChatActivity : ComponentActivity() {
 
 
         imageBack.setOnClickListener{
-            val intent = Intent(this@ChatActivity, MainActivity::class.java)
-            startActivity(intent)
+            val intent = Intent(this@ChatActivity, ChatRoomActivity::class.java)
+            intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+            startActivityIfNeeded(intent,0)
         }
 
         ic_send.setOnClickListener{

@@ -14,8 +14,9 @@ class PassCode : ComponentActivity() {
         val image_back_passcode: AppCompatImageView = findViewById(R.id.imageBackPasscode)
 
         image_back_passcode.setOnClickListener{
-            val intent = Intent(this@PassCode, MainActivity::class.java)
-            startActivity(intent)
+            val intent = Intent(this@PassCode, CreateaccountActivity::class.java)
+            intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+            startActivityIfNeeded(intent,0)
 
         }
 

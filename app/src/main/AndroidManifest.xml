@@ -16,9 +16,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="34">
         <activity
-            android:name=".ChatActivity"
-            android:windowSoftInputMode="adjustResize"
+            android:name=".ChatRoomActivity"
             android:exported="false" />
+        <activity
+            android:name=".ChatActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".PassCode"
             android:exported="false" />
