@@ -12,13 +12,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#DAFFEB">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageBackPasscode"
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:layout_marginStart="16sp"
+            android:layout_marginLeft="16sp"
+            android:layout_marginTop="16sp"
+            android:padding="5sp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:tint="@color/black">
 
+        </androidx.appcompat.widget.AppCompatImageView>
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="362dp"
             android:layout_height="69dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="60dp"
             android:text="We have sent a passcode to your email address, please enter it below"
             android:textAlignment="center"
             android:textSize="50px"
@@ -34,12 +47,16 @@
             android:layout_width="334dp"
             android:layout_height="46dp"
             android:layout_marginTop="60dp"
+            android:paddingLeft="10dp"
+            android:background="@drawable/blank"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView">
 
         </EditText>
+
+
 
         <Button
             android:id="@+id/passcode_button"
@@ -47,9 +64,25 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="88dp"
             android:layout_marginTop="28dp"
+            android:background="@drawable/login_button"
+            android:padding="10dp"
             android:text="Confirm Passcode"
             app:layout_constraintStart_toStartOf="@+id/passcode"
             app:layout_constraintTop_toBottomOf="@+id/passcode">
+
+        </Button>
+        <Button
+            android:id="@+id/resendButton"
+            android:layout_width="@+id/passcode_button"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="28dp"
+            android:background="@drawable/login_button"
+            android:padding="10dp"
+            android:text="Resend Passcode"
+            app:layout_constraintStart_toStartOf="@+id/passcode_button"
+            app:layout_constraintEnd_toEndOf="@+id/passcode_button"
+            app:layout_constraintTop_toBottomOf="@+id/passcode_button">
 
         </Button>
 

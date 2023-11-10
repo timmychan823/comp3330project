@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.ComponentActivity
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.compose.foundation.layout.Box
 import com.android.volley.Request
 import com.android.volley.Response
@@ -26,10 +27,9 @@ class CreateaccountActivity: ComponentActivity() {
         val create_account_button: Button = findViewById(R.id.create_account_button)
         val create_account_error_text: TextView = findViewById(R.id.create_account_error)
         val create_display_name: EditText = findViewById<EditText>(R.id.create_display_name)
+        val image_back_create: AppCompatImageView = findViewById(R.id.imageBackCreate)
 
         create_account_button.setOnClickListener {
-
-
 
             val createEmailAddressText:String = create_email_address!!.text.toString()
             val createPasswordText:String = create_password!!.text.toString()
@@ -43,12 +43,14 @@ class CreateaccountActivity: ComponentActivity() {
                 create_account_error_text.text=""
                 val intent = Intent(this@CreateaccountActivity, PassCode::class.java)
                 startActivity(intent)
-
             }else{
                 create_account_error_text.text="Not HKU email account"
-
-
             }
+
+        }
+        image_back_create.setOnClickListener{
+            val intent = Intent(this@CreateaccountActivity, MainActivity::class.java)
+            startActivity(intent)
 
         }
 
