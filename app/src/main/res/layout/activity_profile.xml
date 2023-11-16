@@ -81,8 +81,62 @@
         </LinearLayout>
 
         <!-- add your layout here -->
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="0dp"
+            android:layout_height="146dp"
+            android:layout_marginStart="141dp"
+            android:layout_marginTop="88dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="91dp"
+            android:src="@drawable/smileface"
+            app:layout_constraintBottom_toBottomOf="@+id/ChangeDetail"
+            app:layout_constraintEnd_toStartOf="@+id/imageButton5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/topProfileBar"
+            app:layout_constraintVertical_bias="0.008" />
 
+        <ImageButton
+            android:id="@+id/imageButton5"
+            android:layout_width="39dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="99dp"
+            android:layout_marginBottom="498dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintTop_toBottomOf="@+id/topProfileBar"
+            app:srcCompat="@android:drawable/ic_menu_edit" />
 
+        <TextView
+            android:id="@+id/textview_username"
+            android:layout_width="0dp"
+            android:layout_height="300dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="167dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="157dp"
+            android:text="User name: Tom Ho\n\nMajor(s): cs/Fina
+                          \n\nYear:3\n\nHobbies: Basketball/Football"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ChangeDetail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView3"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageButton
+            android:id="@+id/ChangeDetail"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginEnd="103dp"
+            android:layout_marginBottom="409dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textview_username"
+            app:layout_constraintTop_toBottomOf="@+id/topProfileBar"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@android:drawable/ic_menu_edit" />
         <!-- ends here -->
 
 
