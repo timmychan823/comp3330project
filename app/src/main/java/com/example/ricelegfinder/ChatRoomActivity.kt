@@ -12,14 +12,27 @@ class ChatRoomActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat_room)
 
-        val chatRoomBackButton: AppCompatImageView = findViewById(R.id.imageBackChatRoom)
+        val profileNavButtonChat: AppCompatImageView = findViewById(R.id.profileNavButtonChat)
+        val restaurantNavButtonChat: AppCompatImageView = findViewById(R.id.restaurantNavButtonChat)
 
-        chatRoomBackButton.setOnClickListener{
-            val intent = Intent(this@ChatRoomActivity, MainActivity::class.java)
+
+        profileNavButtonChat.setOnClickListener{
+            val intent = Intent(this@ChatRoomActivity, Profile::class.java)
             intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
             startActivityIfNeeded(intent,0)
-
+            overridePendingTransition(0,0)
         }
+
+        restaurantNavButtonChat.setOnClickListener{
+            val intent = Intent(this@ChatRoomActivity, Restaurant::class.java)
+            intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+            startActivityIfNeeded(intent,0)
+            overridePendingTransition(0,0)
+        }
+
+
+
+
 
 
 

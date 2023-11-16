@@ -6,31 +6,103 @@
     android:layout_height="match_parent"
     tools:context=".ChatRoomActivity">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <LinearLayout
+        android:id = "@+id/topChatBar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:paddingBottom="10sp"
+        android:background="#57D9A6"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
 
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imageBackChatRoom"
-            android:layout_width="30sp"
-            android:layout_height="30sp"
-            android:layout_marginStart="16sp"
-            android:layout_marginLeft="16sp"
-            android:layout_marginTop="16sp"
-            android:padding="5sp"
-            android:src="@drawable/ic_back"
-            android:tint="@color/black">
+        >
 
-        </androidx.appcompat.widget.AppCompatImageView>
 
-        <ListView
-            android:id="@+id/personlist_viewChat"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+
+            android:text= "ChatRoom"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:gravity="bottom"
+            ></TextView>
 
     </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/chatMiddle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="66sp"
+        android:orientation="horizontal"
+        android:background="#57D9A6"
+        >
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/profileNavButtonChat"
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+
+            android:layout_marginLeft="80sp"
+            android:layout_marginRight="32sp"
+
+            android:layout_marginTop="16sp"
+            android:padding="5sp"
+            android:src="@drawable/profile"
+            android:tint="@color/black"></androidx.appcompat.widget.AppCompatImageView>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/restaurantNavButtonChat"
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            android:layout_marginLeft="32sp"
+            android:layout_marginRight="32sp"
+            android:layout_marginTop="16sp"
+            android:padding="5sp"
+            android:src="@drawable/restaurants"
+            android:tint="@color/black"></androidx.appcompat.widget.AppCompatImageView>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/chatroomNavButtonChat"
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            android:layout_marginLeft="32sp"
+            android:layout_marginRight="300sp"
+            android:layout_marginTop="16sp"
+            android:padding="5sp"
+            android:src="@drawable/chatroom"
+            android:tint="@color/white"></androidx.appcompat.widget.AppCompatImageView>
+
+
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/personlist_viewChat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/topChatBar"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

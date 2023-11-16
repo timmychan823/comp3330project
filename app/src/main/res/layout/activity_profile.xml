@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profile">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id = "@+id/topProfileBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10sp"
+            android:background="#57D9A6"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center"
+
+
+            >
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+
+                android:text= "Profile"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:gravity="bottom"
+                ></TextView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/profileNavBar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="66sp"
+            android:orientation="horizontal"
+            android:background="#57D9A6"
+            >
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/profileNavButtonProfile"
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+
+                android:layout_marginLeft="80sp"
+                android:layout_marginRight="32sp"
+
+                android:layout_marginTop="16sp"
+                android:padding="5sp"
+                android:src="@drawable/profile"
+                android:tint="@color/white"></androidx.appcompat.widget.AppCompatImageView>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/restaurantNavButtonProfile"
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:layout_marginLeft="32sp"
+                android:layout_marginRight="32sp"
+                android:layout_marginTop="16sp"
+                android:padding="5sp"
+                android:src="@drawable/restaurants"
+                android:tint="@color/black"></androidx.appcompat.widget.AppCompatImageView>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/chatNavButtonProfile"
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:layout_marginLeft="32sp"
+                android:layout_marginRight="300sp"
+                android:layout_marginTop="16sp"
+                android:padding="5sp"
+                android:src="@drawable/chatroom"
+                android:tint="@color/black"></androidx.appcompat.widget.AppCompatImageView>
+
+
+
+        </LinearLayout>
+
+        <!-- add your layout here -->
+
+
+        <!-- ends here -->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
