@@ -5,17 +5,92 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Restaurant">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteY="224dp">
+
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="220dp"
+            android:layout_marginTop="292dp"
+            android:layout_marginEnd="40dp"
+            android:src="@drawable/cafe330_pic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/topProfileBar" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="292dp"
+            android:src="@drawable/alfafa_pic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/topProfileBar" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="150dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="245dp"
+            android:text="CYM Canteen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/topProfileBar" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="150dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="440dp"
+            android:text="Alfafa Cafe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/topProfileBar" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="220dp"
+            android:layout_marginTop="95dp"
+            android:layout_marginEnd="40dp"
+            android:src="@drawable/su_can_pic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/topProfileBar" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="95dp"
+            android:src="@drawable/cym_pic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/topProfileBar" />
+
         <LinearLayout
-            android:id = "@+id/topProfileBar"
+            android:id="@+id/topProfileBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="10sp"
             android:background="#57D9A6"
-            app:layout_constraintTop_toTopOf="parent"
             android:gravity="center"
+            android:paddingBottom="10sp"
+            app:layout_constraintTop_toTopOf="parent"
 
 
             >
@@ -25,61 +100,97 @@
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
 
-                android:text= "Restaurant"
-                android:textColor="@color/white"
-                android:textSize="30sp"
                 android:gravity="bottom"
-                ></TextView>
+                android:text="Restaurants"
+                android:textColor="@color/white"
+                android:textSize="30sp"></TextView>
 
         </LinearLayout>
 
 
         <LinearLayout
             android:id="@+id/profileNavBar"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_width="match_parent"
             android:layout_height="66sp"
-            android:orientation="horizontal"
             android:background="#57D9A6"
-            >
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent">
+
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/profileNavButtonRestaurant"
                 android:layout_width="40sp"
                 android:layout_height="40sp"
 
                 android:layout_marginLeft="80sp"
-                android:layout_marginRight="32sp"
-
                 android:layout_marginTop="16sp"
+
+                android:layout_marginRight="32sp"
                 android:padding="5sp"
                 android:src="@drawable/profile"
                 android:tint="@color/black"></androidx.appcompat.widget.AppCompatImageView>
+
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/restaurantNavButtonRestaurant"
                 android:layout_width="40sp"
                 android:layout_height="40sp"
                 android:layout_marginLeft="32sp"
-                android:layout_marginRight="32sp"
                 android:layout_marginTop="16sp"
+                android:layout_marginRight="32sp"
                 android:padding="5sp"
                 android:src="@drawable/restaurants"
                 android:tint="@color/white"></androidx.appcompat.widget.AppCompatImageView>
+
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/chatNavButtonRestaurant"
                 android:layout_width="40sp"
                 android:layout_height="40sp"
                 android:layout_marginLeft="32sp"
-                android:layout_marginRight="300sp"
                 android:layout_marginTop="16sp"
+                android:layout_marginRight="300sp"
                 android:padding="5sp"
                 android:src="@drawable/chatroom"
                 android:tint="@color/black"></androidx.appcompat.widget.AppCompatImageView>
 
 
-
         </LinearLayout>
 
-        <!-- add your layout here -->
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="464dp"
+            android:src="@drawable/comingsoon_pic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/topProfileBar" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="150dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="244dp"
+            android:layout_marginEnd="40dp"
+            android:text="SU Canteen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.96"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/topProfileBar" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="150dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="440dp"
+            android:layout_marginEnd="40dp"
+            android:text="Cafe 330"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.964"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/topProfileBar" /><![CDATA[
+
+        />
+        ]]><!-- add your layout here -->
 
 
         <!-- ends here -->

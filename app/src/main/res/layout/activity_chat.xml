@@ -54,7 +54,7 @@
         android:layout_width="60sp"
         android:layout_height="60sp"
         android:padding="4sp"
-        android:src="@drawable/smile_face"
+        android:src="@drawable/smileface"
         app:layout_constraintStart_toEndOf="@id/imageBack"
         app:layout_constraintTop_toTopOf="@id/imageBack"
         app:layout_constraintBottom_toBottomOf="@id/imageBack"

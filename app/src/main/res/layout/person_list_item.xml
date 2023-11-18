@@ -12,7 +12,7 @@
             android:layout_height="80sp"
             android:layout_marginRight="20sp"
             android:padding="4sp"
-            android:src="@drawable/smile_face">
+            android:src="@drawable/smileface">
 
         </ImageView>
 
