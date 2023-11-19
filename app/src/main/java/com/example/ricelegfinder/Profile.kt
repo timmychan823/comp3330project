@@ -9,7 +9,8 @@ import android.view.View
 import android.widget.ImageButton
 import android.widget.TextView    
 
-class Profile : ComponentActivity() {
+class Profile : AppCompatActivity(), ExampleDialog.ExampleDialogListener {
+//class Profile : ComponentActivity() {
     private var textViewUsername: TextView? = null
     
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +22,7 @@ class Profile : ComponentActivity() {
         val chatNavButtonProfile: AppCompatImageView = findViewById(R.id.chatNavButtonProfile)
         val button = findViewById<View>(R.id.ChangeDetail) as ImageButton
 
-    //    button.setOnClickListener { openDialog() }
+        button.setOnClickListener { openDialog() }
         
         restaurantNavButtonProfile.setOnClickListener{
             val intent = Intent(this@Profile, Restaurant::class.java)
@@ -38,12 +39,12 @@ class Profile : ComponentActivity() {
         }
     }
     
-    //    private fun openDialog() {
-    //    val exampleDialog = ExampleDialog()
-    //    exampleDialog.show(supportFragmentManager, "example dialog")
+        private fun openDialog() {
+        val exampleDialog = ExampleDialog()
+        exampleDialog.show(supportFragmentManager, "example dialog")
     }
 
-    fun applyTexts(username: String?, password: String?,year:String?,hobbies:String?) {
+    override fun applyTexts(username: String?, password: String?,year:String?,hobbies:String?) {
         textViewUsername!!.text = "User name: $username\n\nMajor(s): $password\n\nYear: $year\n\nHobbies: $hobbies"
     }
 
