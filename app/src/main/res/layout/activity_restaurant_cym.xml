@@ -182,13 +182,12 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="129dp"
-            android:layout_height="129dp"
+            android:layout_width="400dp"
+            android:layout_height="200dp"
             android:layout_marginTop="10sp"
             app:layout_constraintTop_toBottomOf="@+id/textView16"
             app:layout_constraintStart_toStartOf="@+id/textView16"
-            android:tint="#57D9A6"
-            android:src="@drawable/info"/>
+            android:src="@drawable/hku_map"/>
 
 
         <!-- add your layout here -->
@@ -200,13 +199,12 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
     <ImageView
         android:id="@+id/enlarged_imageView"
-        android:layout_width="match_parent"
+        android:layout_width= "match_parent"
         android:layout_height="match_parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:tint="#57D9A6"
         android:visibility="invisible"
-        android:src="@drawable/info"/>
+        android:src="@drawable/hku_map_2"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
