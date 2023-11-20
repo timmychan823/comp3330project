@@ -39,7 +39,7 @@ class ChatRoomActivity : ComponentActivity() {
         val studentList = ArrayList<ArrayList<String>>()
 
         studentList.add(arrayListOf("Charlie Chan","AMPB (year3)","Hobbies: Basketball","CYM canteen 22/11/2023 1330-1430", "22/11/2023"))
-        studentList.add(arrayListOf("Philips Chan","CS/Fina (year3)","Hobbies: Football","CYM canteen 2/10/2023 1330-1430", "2/10/2023"))
+        studentList.add(arrayListOf("Philips Chan","CS/Fina (year3)","Hobbies: Football","CYM canteen 21/11/2023 1330-1430", "21/11/2023"))
 
         val list = arrayListOf<MutableMap<String, Any>>()
         for (i in studentList!!.indices) {

@@ -116,7 +116,7 @@ class MatchmenuActivity : ComponentActivity() {
         Log.d("tag","Matched with "+b.getText().toString())
         // showAlertDialog("Matched with "+b.getText().toString())
         sendMessage(url,"","",false)
-        val intent = Intent(this@MatchmenuActivity, ChatRoomActivity::class.java)
+        val intent = Intent(this@MatchmenuActivity, ChatActivity::class.java)
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
         startActivityIfNeeded(intent,0)
 
