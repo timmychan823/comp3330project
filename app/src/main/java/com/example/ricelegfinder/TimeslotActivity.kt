@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import androidx.activity.ComponentActivity
+import androidx.appcompat.widget.AppCompatImageView
 
 class TimeslotActivity : ComponentActivity() {
     private var button1: Button? = null
@@ -17,6 +18,8 @@ class TimeslotActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.timeslot)
+        val imageBack_cymcanteen: AppCompatImageView = findViewById(R.id.imageBack_cymcanteen)
+
         val rname = intent.getStringExtra("rname").toString()
         button1 = findViewById<Button>(R.id.button1)
         button2 = findViewById<Button>(R.id.button2)
@@ -26,6 +29,13 @@ class TimeslotActivity : ComponentActivity() {
         setlistener(button2!!,rname)
         setlistener(button3!!,rname)
         setlistener(button4!!,rname)
+
+
+        imageBack_cymcanteen.setOnClickListener{
+            val intent = Intent(this@TimeslotActivity, Restaurant::class.java)
+            intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+            startActivityIfNeeded(intent,0)
+        }
 
     }
 // set on click listener to pass the selected timeslot and restaurant to next activity + switch activity

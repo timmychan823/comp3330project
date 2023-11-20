@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatImageView
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
@@ -34,7 +35,7 @@ class MatchmenuActivity : ComponentActivity() {
 
      */
     // Changable, depending on the current user
-    val myname:String = "Hello"
+    val myname:String = "Leo Lam (You)"
 
 
 
@@ -44,6 +45,7 @@ class MatchmenuActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.matchmenu)
         creatematch_btn = findViewById<Button>(R.id.creatematch)
+        val imageBack_cymcanteen: AppCompatImageView = findViewById(R.id.imageBack_cymcanteen)
 //access to the web server and display the user in the same restaurant and time slot
         val url:String = SERVER_IP_AND_PORT_NUMBER+"/matchrecord"
         val rname = intent.getStringExtra("rname").toString()
@@ -56,6 +58,12 @@ class MatchmenuActivity : ComponentActivity() {
             Log.d("createMatchError", "This is my message"+myname+" "+rname+" "+time)
             sendMessage(url,rname!!,time!!,true)
             // showAlertDialog("You have created your own match.")
+
+        }
+        imageBack_cymcanteen.setOnClickListener{
+            val intent = Intent(this@MatchmenuActivity, TimeslotActivity::class.java)
+            intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+            startActivityIfNeeded(intent,0)
         }
 
     }
