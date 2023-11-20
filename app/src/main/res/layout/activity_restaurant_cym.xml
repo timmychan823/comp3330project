@@ -7,6 +7,7 @@
     tools:context=".restaurant_cym">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/wholeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="113dp"
@@ -181,19 +182,31 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="190dp"
+            android:layout_width="129dp"
             android:layout_height="129dp"
             android:layout_marginTop="10sp"
             app:layout_constraintTop_toBottomOf="@+id/textView16"
             app:layout_constraintStart_toStartOf="@+id/textView16"
             android:tint="#57D9A6"
-            android:src="@drawable/info" /><!-- add your layout here -->
+            android:src="@drawable/info"/>
+
+
+        <!-- add your layout here -->
 
 
         <!-- ends here -->
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/enlarged_imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:tint="#57D9A6"
+        android:visibility="invisible"
+        android:src="@drawable/info"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
