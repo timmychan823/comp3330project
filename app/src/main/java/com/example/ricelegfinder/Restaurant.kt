@@ -40,7 +40,7 @@ class Restaurant : ComponentActivity() {
 
         }
         cymcanteen_image.setOnClickListener{
-            val intent = Intent(this@Restaurant, MatchActivity::class.java)
+            val intent = Intent(this@Restaurant, TimeslotActivity::class.java)
             intent.putExtra("rname","CYM Canteen")
             intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
             startActivityIfNeeded(intent,0)

@@ -136,7 +136,7 @@
                 android:gravity="bottom"
                 android:text="CYM canteen"
                 android:textColor="@color/white"
-                android:textSize="30sp"></TextView>
+                android:textSize="20sp"></TextView>
 
 
         </LinearLayout>

@@ -24,14 +24,19 @@ class MatchmenuActivity : ComponentActivity() {
 
     val SERVER_IP_AND_PORT_NUMBER = "http://192.168.1.207:8888" //change this after starting the server on your laptop
 
+    /*
     val positiveButtonClick = { dialog: DialogInterface, which: Int ->
         Toast.makeText(applicationContext,
             android.R.string.no, Toast.LENGTH_SHORT).show()
         finish()
         startActivity(getIntent())
     }
+
+     */
     // Changable, depending on the current user
-    val myname:String = "Test"
+    val myname:String = "Hello"
+
+
 
 
     private var creatematch_btn: Button? = null
@@ -47,9 +52,10 @@ class MatchmenuActivity : ComponentActivity() {
 
         //Create match
         creatematch_btn!!.setOnClickListener(){
-            val url = SERVER_IP_AND_PORT_NUMBER+"+/matchrecord?User_Name="+myname+"&Restaurant="+rname+"&TimeSlot="+time
+            val url = SERVER_IP_AND_PORT_NUMBER+"/matchrecord?User_Name="+myname+"&Restaurant="+rname+"&TimeSlot="+time
+            Log.d("createMatchError", "This is my message"+myname+" "+rname+" "+time)
             sendMessage(url,rname!!,time!!,true)
-            showAlertDialog("You have created your own match.")
+            // showAlertDialog("You have created your own match.")
         }
 
     }
@@ -90,17 +96,27 @@ class MatchmenuActivity : ComponentActivity() {
         val adapter = SimpleAdapter(this,list, R.layout.match_list_item, arrayOf("Name"), intArrayOf(R.id.name))
         val list_view: ListView = findViewById(R.id.list_view)
         list_view.adapter = adapter
+
+
+
     }
 // on click event of the clickable button, make a match and delete that match record from the database after clicking it
     fun select(v: View){
+        Log.d("select", "clicked")
         val b = v as Button
         val url = SERVER_IP_AND_PORT_NUMBER+"/matchrecord?Delete="+b.getText().toString()
         Log.d("tag","Matched with "+b.getText().toString())
-        showAlertDialog("Matched with "+b.getText().toString())
+        // showAlertDialog("Matched with "+b.getText().toString())
         sendMessage(url,"","",false)
+        val intent = Intent(this@MatchmenuActivity, ChatRoomActivity::class.java)
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+        startActivityIfNeeded(intent,0)
+
 
     }
 //display after making a match
+
+    /*
     fun showAlertDialog(line:String){
         val dialog = AlertDialog.Builder(this)
         dialog.setTitle("")
@@ -108,4 +124,6 @@ class MatchmenuActivity : ComponentActivity() {
         dialog.setMessage(line)
         dialog.show()
     }
+    */
+
 }

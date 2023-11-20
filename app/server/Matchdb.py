@@ -11,12 +11,13 @@ cur.execute("""CREATE TABLE IF NOT EXISTS Record (
             TimeSlot TEXT NOT NULL
             )""")
 
-record = [{'User_Name':'Jacky','Restaurant':'CYM Canteen','TimeSlot':'11:30'},
-          {'User_Name':'Billy','Restaurant':'FSCAC Restaurant','TimeSlot':'13:30'},
-          {'User_Name':'Tom','Restaurant':'27 Kebab House','TimeSlot':'12:30'},
-          {'User_Name':'James','Restaurant':'CYM Canteen','TimeSlot':'11:30'},
-          {'User_Name':'Kalvin','Restaurant':'Subway','TimeSlot':'11:30'},
-          {'User_Name':'Timmy','Restaurant':'CYM Canteen','TimeSlot':'14:30'}
+record = [{'User_Name':'Jacky Cheng','Restaurant':'CYM Canteen','TimeSlot':'11:30'},
+          {'User_Name':'Billy Kong','Restaurant':'FSCAC Restaurant','TimeSlot':'13:30'},
+          {'User_Name':'Tom Tang','Restaurant':'27 Kebab House','TimeSlot':'12:30'},
+          {'User_Name':'James Fong','Restaurant':'CYM Canteen','TimeSlot':'11:30'},
+          {'User_Name':'Kalvin Cai','Restaurant':'Subway','TimeSlot':'11:30'},
+          {'User_Name':'Timmy Chan','Restaurant':'CYM Canteen','TimeSlot':'14:30'},
+          {'User_Name':'Charlie Chan','Restaurant':'CYM Canteen','TimeSlot':'13:30'}
           ]
 
 for i in record:
